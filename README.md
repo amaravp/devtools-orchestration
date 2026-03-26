@@ -10,7 +10,7 @@ Built as a working prototype to support case study presentation and portfolio do
 
 ## Live
 
-https://[your-github-username].github.io/alexa-builder-orchestration-experiences/
+https://amaravp.github.io/devtools-orchestration/
 
 ## Structure
 
