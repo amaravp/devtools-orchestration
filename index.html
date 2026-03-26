@@ -14,8 +14,8 @@
     --border-strong: #C8C8C8;
     --text:        #0A0A0A;
     --body:        #3A3A3A;
-    --muted:       #888888;
-    --muted-lt:    #BBBBBB;
+    --muted:       #595959;
+    --muted-lt:    #FFFFFF;
     --accent:      #00A8E1;
     --accent-lt:   #E6F7FD;
     --accent-dim:  rgba(0,168,225,0.12);
@@ -28,7 +28,7 @@
   body {
     background: var(--bg);
     font-family: var(--sans);
-    color: var(--text);
+    color: #004F6E;
     padding: 48px 40px 80px;
     min-width: 960px;
   }
@@ -78,7 +78,7 @@
 
   .ctrl-btn {
     font-family: var(--mono);
-    font-size: 10.5px;
+    font-size: 11px;
     padding: 5px 12px;
     border: 1px solid var(--border-strong);
     border-radius: 3px;
@@ -112,7 +112,8 @@
 
   /* ── Column headers ── */
   .col-label-row th {
-    border-bottom: 2px solid var(--text);
+    border-bottom: 1px solid var(--border);
+    background: #007BA6 !important;
     padding: 0;
   }
 
@@ -124,22 +125,22 @@
   .th-step {
     display: block;
     font-family: var(--mono);
-    font-size: 10px;
-    color: var(--accent);
+    font-size: 11px;
+    color: rgba(255,255,255,0.7);
     letter-spacing: 0.08em;
     margin-bottom: 3px;
   }
 
   .th-title {
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 600;
-    color: var(--text);
+    color: #FFFFFF;
     letter-spacing: -0.2px;
   }
 
   th.row-label-th {
     width: 142px;
-    background: var(--surface-2);
+    background: #007BA6;
     border-right: 1px solid var(--border);
   }
 
@@ -157,44 +158,56 @@
   }
 
   .section-row td {
-    background: #007BA6;
+    background: #D6EEF7;
     padding: 8px 18px;
-    border-top: none;
-    border-bottom: none;
+    border-top: 1px solid #A8D8EE;
+    border-bottom: 1px solid #A8D8EE;
   }
 
   .section-label {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3px;
+  }
+
+  .section-label .chevron {
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .section-row td {
+    position: relative;
   }
 
   .section-name {
-    font-family: var(--mono);
-    font-size: 10px;
+    font-family: var(--sans);
+    font-size: 11px;
     font-weight: 600;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--surface);
+    color: var(--text);
   }
 
   .section-q {
     font-family: var(--sans);
     font-size: 11px;
-    color: rgba(255,255,255,0.65);
+    font-size: 11px;
+    color: #005A7A;
     font-style: italic;
   }
 
   .chevron {
-    margin-left: auto;
-    font-size: 9px;
-    color: var(--muted-lt);
+    font-size: 11px;
+    color: #005A7A;
     transition: transform 0.18s;
     display: inline-block;
   }
 
   .section-row.collapsed .chevron { transform: rotate(-90deg); }
-  .section-row:hover td { background: #006A90; }
+  .section-row:hover td { background: #C2E3F0; }
 
   /* ── Data rows ── */
   .data-row td {
@@ -213,6 +226,7 @@
 
   /* Row label cell */
   .row-label {
+    font-family: var(--sans);
     font-size: 12px;
     font-weight: 500;
     color: var(--text);
@@ -238,28 +252,28 @@
   /* ── Surface ── */
   .pill-primary {
     display: inline-block;
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    padding: 3px 8px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
     border-radius: 3px;
-    background: var(--text);
-    color: var(--surface);
-    margin-bottom: 7px;
+    background: #FFFFFF;
+    color: #00A8E1;
+    border: 1px solid #00A8E1;
+    margin: 0 4px 4px 0;
   }
 
   .pill-secondary {
     display: inline-block;
-    font-family: var(--mono);
-    font-size: 11px;
-    letter-spacing: 0.03em;
-    padding: 3px 8px;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
     border-radius: 3px;
     background: var(--surface-2);
-    border: 1px solid var(--border);
     color: var(--text);
-    margin-bottom: 7px;
+    border: 1px solid var(--border);
+    margin: 0 4px 4px 0;
   }
 
   .surface-note {
@@ -278,14 +292,15 @@
   /* ── Agent chips ── */
   .agent-chip {
     display: inline-block;
-    font-family: var(--mono);
-    font-size: 11px;
-    padding: 2px 7px;
-    border-radius: 2px;
-    background: var(--accent-dim);
-    color: var(--accent);
-    border: 1px solid rgba(0,168,225,0.25);
-    margin: 0 3px 4px 0;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    margin: 0 4px 4px 0;
   }
 
   .agent-desc {
@@ -306,11 +321,7 @@
   .mode-block:last-child { margin-bottom: 0; }
 
   .mode-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    margin-top: 5px;
-    flex-shrink: 0;
+    display: none;
   }
 
   .dot-hitl { background: #D03B2F; }
@@ -318,29 +329,22 @@
   .dot-none { background: var(--border-strong); }
 
   .mode-label {
-    font-family: var(--mono);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    margin-bottom: 2px;
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 3px;
+    background: var(--surface-2);
+    color: var(--text);
+    border: 1px solid var(--border);
+    margin: 0 4px 4px 0;
   }
 
   /* HITL: red scale — always = full red, selective = orange, on demand = amber */
-  .hitl-always   { color: #D03B2F; }
-  .hitl-selective{ color: #D4711A; }
-  .hitl-ondemand { color: #C49A10; }
 
   /* Autonomous: green scale — none = gray, low = light green, moderate = mid green, high = full green */
-  .auto-none     { color: var(--muted); }
-  .auto-low      { color: #7DBF72; }
-  .auto-moderate { color: #3DAB6A; }
-  .auto-high     { color: #2E9E5B; }
 
-  /* keep legacy classes for dot colors */
-  .hitl-label { color: #D03B2F; }
-  .auto-label { color: #2E9E5B; }
-  .none-label { color: var(--muted); }
 
   .mode-desc {
     font-size: 12px;
@@ -350,6 +354,10 @@
 
   /* ── Collapse ── */
   .collapsible.hidden { display: none; }
+
+  /* ── Sub-row detail toggle ── */
+  .detail { display: none; }
+  .detail.visible { display: block; }
 
   /* ── Footer ── */
   footer {
@@ -380,8 +388,8 @@
     <span class="header-meta">amara.design</span>
   </div>
   <div class="controls">
-    <button class="ctrl-btn" onclick="expandAll()">Expand all</button>
-    <button class="ctrl-btn" onclick="collapseAll()">Collapse all</button>
+    <button class="ctrl-btn" id="rowsToggle" onclick="toggleRows()">Expand all</button>
+    <button class="ctrl-btn" id="detailsToggle" onclick="toggleDetails()">Show details</button>
   </div>
 </header>
 
@@ -431,39 +439,40 @@
     <tr class="data-row collapsible" data-section="where">
       <td class="row-label">Website</td>
       <td>
-        <span class="pill-primary">★ Primary</span>
-        <span class="surface-note">Define moments, confirm agent-drafted spec, set data sensitivity flags</span>
+        <span class="pill-primary">✦ Primary</span>
+        <div class="detail visible" id="w-ideate"><span class="surface-note">Define moments, confirm agent-drafted spec, set data sensitivity flags</span></div>
       </td>
       <td>
         <span class="pill-secondary">Secondary</span>
-        <span class="surface-note">Approve capability mappings, resolve routing gaps</span>
+        <div class="detail visible" id="w-build"><span class="surface-note">Approve capability mappings, resolve routing gaps</span></div>
       </td>
       <td>
         <span class="pill-secondary">Secondary</span>
-        <span class="surface-note">Review test results, submit for certification, approve staged rollout</span>
+        <div class="detail visible" id="w-test"><span class="surface-note">Review test results, submit for certification, approve staged rollout</span></div>
       </td>
       <td>
-        <span class="pill-primary">★ Primary</span>
-        <span class="surface-note">Usage dashboards, task completion rates, drop-off analysis</span>
+        <span class="pill-primary">✦ Primary</span>
+        <div class="detail visible" id="w-monitor"><span class="surface-note">Usage dashboards, task completion rates, drop-off analysis</span></div>
       </td>
     </tr>
 
     <tr class="data-row collapsible" data-section="where">
       <td class="row-label">IDE</td>
       <td>
-        <span class="empty-cell">—</span>
+        <span class="pill-secondary">Not applicable</span>
+        <div class="detail visible" id="ide-ideate"><span class="surface-note">Ideation happens on the Website surface. The IDE only becomes relevant once there is something to build — it picks up at Build &amp; Simulate and carries through to Test &amp; Deploy.</span></div>
       </td>
       <td>
-        <span class="pill-primary">★ Primary</span>
-        <span class="surface-note">Write action definitions, inline SDK suggestions, iterate on scaffolded code</span>
+        <span class="pill-primary">✦ Primary</span>
+        <div class="detail visible" id="ide-build"><span class="surface-note">Write action definitions, inline SDK suggestions, iterate on scaffolded code</span></div>
       </td>
       <td>
-        <span class="pill-primary">★ Primary</span>
-        <span class="surface-note">Run test suites, debug endpoint failures, review error logs</span>
+        <span class="pill-primary">✦ Primary</span>
+        <div class="detail visible" id="ide-test"><span class="surface-note">Run test suites, debug endpoint failures, review error logs</span></div>
       </td>
       <td>
         <span class="pill-secondary">Secondary</span>
-        <span class="surface-note">Inspect live API response diffs, view performance alerts</span>
+        <div class="detail visible" id="ide-monitor"><span class="surface-note">Inspect live API response diffs, view performance alerts</span></div>
       </td>
     </tr>
 
@@ -472,31 +481,9 @@
       <td colspan="5">
         <div class="section-label">
           <span class="section-name">How It Works</span>
-          <span class="section-q">What is the agent doing, and how much control does the developer have?</span>
+          <span class="section-q">Where does collaboration end and autonomy begin?</span>
           <span class="chevron">▾</span>
         </div>
-      </td>
-    </tr>
-
-    <tr class="data-row collapsible" data-section="how">
-      <td class="row-label">Agent responsibilities</td>
-      <td>
-        <span class="agent-chip">Orchestrator</span>
-        <p class="agent-desc">Surfaces integration type and drafts moment scaffold; proposes Core, Edge, and Boundary moments from URL or conversation</p>
-      </td>
-      <td>
-        <span class="agent-chip">Orchestrator</span>
-        <span class="agent-chip">Sub-agent</span>
-        <p class="agent-desc">Delegates to sub-agents for capability mapping and routing validation; flags gaps before developer advances</p>
-      </td>
-      <td>
-        <span class="agent-chip">Sub-agent</span>
-        <span class="agent-chip">Judge agent</span>
-        <p class="agent-desc">Sub-agents execute test runs autonomously; judge agent evaluates results and surfaces a go/no-go recommendation</p>
-      </td>
-      <td>
-        <span class="agent-chip">Orchestrator</span>
-        <p class="agent-desc">Monitors continuously across all surfaces; surfaces anomalies, intent drift, and performance degradation for developer review</p>
       </td>
     </tr>
 
@@ -506,17 +493,17 @@
         <div class="mode-block">
           <div class="mode-dot dot-hitl" style="background:#D03B2F"></div>
           <div>
-            <div class="mode-label hitl-always">Always</div>
-            <div class="mode-desc">Developer confirms every moment before spec is generated; no technical scaffolding begins without explicit approval</div>
+            <div class="mode-label hitl-always" style="background:#FFFFFF;color:#00A8E1;border:1px solid #00A8E1;padding:2px 8px;border-radius:3px;">✦ Always</div>
+            <div class="detail visible" id="hitl-ideate"><div class="mode-desc">Developer confirms every moment before spec is generated; no technical scaffolding begins without explicit approval</div></div>
           </div>
         </div>
       </td>
       <td>
         <div class="mode-block">
-          <div class="mode-dot dot-hitl"></div>
+          <div class="mode-dot dot-hitl" style="background:#D03B2F"></div>
           <div>
-            <div class="mode-label hitl-label">Always</div>
-            <div class="mode-desc">Developer approves all capability mappings; resolves flagged routing gaps before advancing to simulate</div>
+            <div class="mode-label hitl-always" style="background:#FFFFFF;color:#00A8E1;border:1px solid #00A8E1;padding:2px 8px;border-radius:3px;">✦ Always</div>
+            <div class="detail visible" id="hitl-build"><div class="mode-desc">Developer approves all capability mappings; resolves flagged routing gaps before advancing to simulate</div></div>
           </div>
         </div>
       </td>
@@ -525,7 +512,7 @@
           <div class="mode-dot dot-hitl" style="background:#D4711A"></div>
           <div>
             <div class="mode-label hitl-selective">Selective</div>
-            <div class="mode-desc">Developer makes the final go/no-go call and approves deployment scope; agent handles test execution</div>
+            <div class="detail visible" id="hitl-test"><div class="mode-desc">Developer makes the final go/no-go call and approves deployment scope; agent handles test execution</div></div>
           </div>
         </div>
       </td>
@@ -534,47 +521,69 @@
           <div class="mode-dot dot-hitl" style="background:#C49A10"></div>
           <div>
             <div class="mode-label hitl-ondemand">On demand</div>
-            <div class="mode-desc">Developer sets thresholds and reviews flagged issues; routine monitoring runs without developer input</div>
+            <div class="detail visible" id="hitl-monitor"><div class="mode-desc">Developer sets thresholds and reviews flagged issues; routine monitoring runs without developer input</div></div>
           </div>
         </div>
       </td>
     </tr>
 
     <tr class="data-row collapsible" data-section="how">
-      <td class="row-label">Autonomous</td>
+      <td class="row-label">Agent responsibilities</td>
+      <td>
+        <span class="agent-chip">Orchestrator</span>
+        <div class="detail visible" id="ag-ideate"><p class="agent-desc">Surfaces integration type and drafts moment scaffold from URL or conversation</p></div>
+      </td>
+      <td>
+        <span class="agent-chip">Orchestrator</span>
+        <span class="agent-chip">Sub-agent</span>
+        <div class="detail visible" id="ag-build"><p class="agent-desc">Delegates to sub-agents for capability mapping and routing validation; flags gaps before developer advances</p></div>
+      </td>
+      <td>
+        <span class="agent-chip">Sub-agent</span>
+        <span class="agent-chip">Judge agent</span>
+        <div class="detail visible" id="ag-test"><p class="agent-desc">Sub-agents execute test runs autonomously; judge agent evaluates results and surfaces a go/no-go recommendation</p></div>
+      </td>
+      <td>
+        <span class="agent-chip">Orchestrator</span>
+        <div class="detail visible" id="ag-monitor"><p class="agent-desc">Monitors continuously across all surfaces; surfaces anomalies, intent drift, and performance degradation for developer review</p></div>
+      </td>
+    </tr>
+
+    <tr class="data-row collapsible" data-section="how">
+      <td class="row-label">Agent autonomy</td>
       <td>
         <div class="mode-block">
-          <div class="mode-dot" style="background:#BBBBBB;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
+          <div class="mode-dot" style="background:#D03B2F;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
             <div class="mode-label auto-none">None</div>
-            <div class="mode-desc">All ideation outputs require developer confirmation before proceeding</div>
+            <div class="detail visible" id="auto-ideate"><div class="mode-desc">All ideation outputs require developer confirmation before proceeding</div></div>
           </div>
         </div>
       </td>
       <td>
         <div class="mode-block">
-          <div class="mode-dot" style="background:#7DBF72;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
+          <div class="mode-dot" style="background:#C49A10;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
             <div class="mode-label auto-low">Low</div>
-            <div class="mode-desc">Agent scaffolds boilerplate and surfaces routing suggestions without prompting</div>
+            <div class="detail visible" id="auto-build"><div class="mode-desc">Agent scaffolds boilerplate and surfaces routing suggestions without prompting</div></div>
           </div>
         </div>
       </td>
       <td>
         <div class="mode-block">
-          <div class="mode-dot" style="background:#3DAB6A;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
+          <div class="mode-dot" style="background:#D4711A;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
             <div class="mode-label auto-moderate">Moderate</div>
-            <div class="mode-desc">Agent runs full test suites and stages builds independently; surfaces results for review</div>
+            <div class="detail visible" id="auto-test"><div class="mode-desc">Agent runs full test suites and stages builds independently; surfaces results for review</div></div>
           </div>
         </div>
       </td>
       <td>
         <div class="mode-block">
-          <div class="mode-dot" style="background:#2E9E5B;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
+          <div class="mode-dot" style="background:#D03B2F;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
-            <div class="mode-label auto-high">High</div>
-            <div class="mode-desc">Agent monitors, logs, and surfaces insights continuously without developer-initiated prompts</div>
+            <div class="mode-label auto-high" style="background:#FFFFFF;color:#00A8E1;border:1px solid #00A8E1;padding:2px 8px;border-radius:3px;">✦ High</div>
+            <div class="detail visible" id="auto-monitor"><div class="mode-desc">Agent monitors, logs, and surfaces insights continuously without developer-initiated prompts</div></div>
           </div>
         </div>
       </td>
@@ -595,14 +604,32 @@
     headerRow.classList.toggle('collapsed', !isCollapsed);
   }
 
-  function expandAll() {
-    document.querySelectorAll('.collapsible').forEach(r => r.classList.remove('hidden'));
-    document.querySelectorAll('.section-row').forEach(r => r.classList.remove('collapsed'));
+  function toggleRows() {
+    const btn = document.getElementById('rowsToggle');
+    const isExpanded = btn.dataset.state === 'expanded';
+    if (isExpanded) {
+      // Collapse Where It Happens and How It Works only
+      ['where', 'how'].forEach(id => {
+        document.querySelectorAll(`[data-section="${id}"]`).forEach(r => r.classList.add('hidden'));
+        document.querySelector(`[onclick="toggleSection('${id}')"]`).classList.add('collapsed');
+      });
+      btn.textContent = 'Expand all';
+      btn.dataset.state = 'collapsed';
+    } else {
+      // Expand all sections
+      document.querySelectorAll('.collapsible').forEach(r => r.classList.remove('hidden'));
+      document.querySelectorAll('.section-row').forEach(r => r.classList.remove('collapsed'));
+      btn.textContent = 'Collapse all';
+      btn.dataset.state = 'expanded';
+    }
   }
 
-  function collapseAll() {
-    document.querySelectorAll('.collapsible').forEach(r => r.classList.add('hidden'));
-    document.querySelectorAll('.section-row').forEach(r => r.classList.add('collapsed'));
+  function toggleDetails() {
+    const btn = document.getElementById('detailsToggle');
+    const isVisible = btn.dataset.state === 'visible';
+    document.querySelectorAll('.detail').forEach(r => r.classList.toggle('visible', !isVisible));
+    btn.textContent = isVisible ? 'Show details' : 'Hide details';
+    btn.dataset.state = isVisible ? 'hidden' : 'visible';
   }
 </script>
 
