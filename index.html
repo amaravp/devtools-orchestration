@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Alexa+ Agent-Assisted DX</title>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" />
 <style>
   :root {
     --bg:          #F7F7F7;
@@ -12,15 +12,15 @@
     --surface-2:   #F0F0F0;
     --border:      #E0E0E0;
     --border-strong: #C8C8C8;
-    --text:        #0A0A0A;
-    --body:        #3A3A3A;
+    --text:        #1B2E6B;
+    --body:        #2A3A5C;
     --muted:       #595959;
     --muted-lt:    #FFFFFF;
     --accent:      #00A8E1;
     --accent-lt:   #E6F7FD;
     --accent-dim:  rgba(0,168,225,0.12);
-    --mono: 'IBM Plex Mono', monospace;
-    --sans: 'IBM Plex Sans', sans-serif;
+    --mono: 'Lato', sans-serif;
+    --sans: 'Lato', sans-serif;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -28,7 +28,7 @@
   body {
     background: var(--bg);
     font-family: var(--sans);
-    color: #004F6E;
+    color: #1B2E6B;
     padding: 48px 40px 80px;
     min-width: 960px;
   }
@@ -54,7 +54,7 @@
   }
 
   .header-title {
-    font-size: 13.5px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text);
     letter-spacing: -0.1px;
@@ -66,7 +66,7 @@
   }
 
   .header-meta {
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
     color: var(--body);
   }
@@ -78,8 +78,8 @@
 
   .ctrl-btn {
     font-family: var(--mono);
-    font-size: 11px;
-    padding: 5px 12px;
+    font-size: 14px;
+    padding: 6px 14px;
     border: 1px solid var(--border-strong);
     border-radius: 3px;
     background: var(--surface);
@@ -98,7 +98,7 @@
   /* ── Table ── */
   .table-wrap {
     background: var(--surface);
-    border: 1px solid var(--border);
+    border: 1px solid #B8CDE0;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 1px 6px rgba(0,0,0,0.06);
@@ -113,7 +113,7 @@
   /* ── Column headers ── */
   .col-label-row th {
     border-bottom: 1px solid var(--border);
-    background: #007BA6 !important;
+    background: #1B2E6B !important;
     padding: 0;
   }
 
@@ -125,22 +125,22 @@
   .th-step {
     display: block;
     font-family: var(--mono);
-    font-size: 11px;
-    color: rgba(255,255,255,0.7);
-    letter-spacing: 0.08em;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 0.04em;
     margin-bottom: 3px;
   }
 
   .th-title {
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 700;
     color: #FFFFFF;
     letter-spacing: -0.2px;
   }
 
   th.row-label-th {
-    width: 142px;
-    background: #007BA6;
+    width: 180px;
+    background: #1B2E6B;
     border-right: 1px solid var(--border);
   }
 
@@ -158,10 +158,10 @@
   }
 
   .section-row td {
-    background: #D6EEF7;
+    background: #D6E4F0;
     padding: 8px 18px;
-    border-top: 1px solid #A8D8EE;
-    border-bottom: 1px solid #A8D8EE;
+    border-top: 1px solid #B8CDE0;
+    border-bottom: 1px solid #B8CDE0;
   }
 
   .section-label {
@@ -184,30 +184,30 @@
 
   .section-name {
     font-family: var(--sans);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--text);
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: #1B2E6B;
   }
 
   .section-q {
     font-family: var(--sans);
     font-size: 11px;
-    font-size: 11px;
-    color: #005A7A;
+    font-size: 16px;
+    color: #2A4080;
     font-style: italic;
   }
 
   .chevron {
     font-size: 11px;
-    color: #005A7A;
+    color: #2A4080;
     transition: transform 0.18s;
     display: inline-block;
   }
 
   .section-row.collapsed .chevron { transform: rotate(-90deg); }
-  .section-row:hover td { background: #C2E3F0; }
+  .section-row:hover td { background: #C0D5E8; }
 
   /* ── Data rows ── */
   .data-row td {
@@ -215,8 +215,8 @@
     vertical-align: top;
     border-bottom: 1px solid var(--border);
     border-right: 1px solid var(--border);
-    font-size: 12px;
-    line-height: 1.65;
+    font-size: 16px;
+    line-height: 1.6;
     color: var(--body);
   }
 
@@ -227,20 +227,21 @@
   /* Row label cell */
   .row-label {
     font-family: var(--sans);
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--text);
-    background: var(--surface-2) !important;
+    background: #EEF3F8 !important;
     border-right: 1px solid var(--border) !important;
     padding: 14px 14px !important;
-    white-space: nowrap;
+    white-space: normal;
   }
 
   /* ── JTBD ── */
   .jtbd-cell {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--body);
     line-height: 1.7;
+    font-style: italic;
   }
 
   .jtbd-cell em {
@@ -253,7 +254,7 @@
   .pill-primary {
     display: inline-block;
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     padding: 2px 8px;
     border-radius: 3px;
@@ -266,26 +267,26 @@
   .pill-secondary {
     display: inline-block;
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     padding: 2px 8px;
     border-radius: 3px;
-    background: var(--surface-2);
-    color: var(--text);
-    border: 1px solid var(--border);
+    background: #D6E4F0;
+    color: #1B2E6B;
+    border: 1px solid #B8CDE0;
     margin: 0 4px 4px 0;
   }
 
   .surface-note {
     display: block;
-    font-size: 12px;
+    font-size: 16px;
     color: var(--body);
     line-height: 1.55;
   }
 
   .empty-cell {
     font-family: var(--mono);
-    font-size: 13px;
+    font-size: 16px;
     color: var(--border-strong);
   }
 
@@ -293,18 +294,18 @@
   .agent-chip {
     display: inline-block;
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     padding: 2px 8px;
     border-radius: 3px;
-    background: var(--surface-2);
-    color: var(--text);
-    border: 1px solid var(--border);
+    background: #D6E4F0;
+    color: #1B2E6B;
+    border: 1px solid #B8CDE0;
     margin: 0 4px 4px 0;
   }
 
   .agent-desc {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--body);
     margin-top: 6px;
     line-height: 1.55;
@@ -331,13 +332,13 @@
   .mode-label {
     display: inline-block;
     font-family: var(--sans);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     padding: 2px 8px;
     border-radius: 3px;
-    background: var(--surface-2);
-    color: var(--text);
-    border: 1px solid var(--border);
+    background: #D6E4F0;
+    color: #1B2E6B;
+    border: 1px solid #B8CDE0;
     margin: 0 4px 4px 0;
   }
 
@@ -347,7 +348,7 @@
 
 
   .mode-desc {
-    font-size: 12px;
+    font-size: 16px;
     color: var(--body);
     line-height: 1.55;
   }
@@ -486,7 +487,6 @@
     <span class="header-meta">amara.design</span>
   </div>
   <div class="controls">
-    <button class="ctrl-btn" id="rowsToggle" onclick="toggleRows()">Expand all</button>
     <button class="ctrl-btn" id="detailsToggle" onclick="toggleDetails()">Show details</button>
   </div>
 </header>
@@ -496,17 +496,16 @@
   <thead>
     <tr class="col-label-row">
       <th class="row-label-th"></th>
-      <th class="col-th"><div class="th-inner"><span class="th-step">DX01</span><span class="th-title">Ideate</span></div></th>
-      <th class="col-th"><div class="th-inner"><span class="th-step">DX02</span><span class="th-title">Build &amp; Simulate</span></div></th>
-      <th class="col-th"><div class="th-inner"><span class="th-step">DX03</span><span class="th-title">Test &amp; Deploy</span></div></th>
-      <th class="col-th"><div class="th-inner"><span class="th-step">DX04</span><span class="th-title">Monitor &amp; Manage</span></div></th>
+      <th class="col-th"><div class="th-inner"><span class="th-step">Phase 1</span><span class="th-title">Building</span></div></th>
+      <th class="col-th"><div class="th-inner"><span class="th-step">Phase 2</span><span class="th-title">Deploying</span></div></th>
+      <th class="col-th"><div class="th-inner"><span class="th-step">Phase 3</span><span class="th-title">Managing</span></div></th>
     </tr>
   </thead>
   <tbody>
 
     <!-- ══ SECTION 1 ══ -->
     <tr class="section-row" onclick="toggleSection('need')">
-      <td colspan="5">
+      <td colspan="4">
         <div class="section-label">
           <span class="section-name">Developer Need</span>
           <span class="section-q">What does the developer need at this signpost?</span>
@@ -516,16 +515,15 @@
     </tr>
 
     <tr class="data-row collapsible" data-section="need">
-      <td class="row-label">JTBD</td>
-      <td class="jtbd-cell">When I'm exploring what's possible with Alexa+, I want to <em>map out the customer moments</em> my integration could own, so I can define a clear scope before writing a single line of code.</td>
-      <td class="jtbd-cell">When I'm developing my integration, I want to <em>build and preview customer interactions</em> in one place, so I can iterate quickly without switching between tools.</td>
-      <td class="jtbd-cell">When my integration is ready, I want to <em>validate it against real edge cases</em> and ship with confidence, so I can ensure customers get a reliable experience from day one.</td>
-      <td class="jtbd-cell">When my integration is live, I want <em>visibility into how customers are actually using it</em>, so I can catch issues early and keep improving over time.</td>
+      <td class="row-label">Job to be done</td>
+      <td class="jtbd-cell">When I'm connecting my service to Alexa+, I want to <em>map my API schema and generate a testable prototype</em> quickly, so I can validate the experience before investing in full build-out.</td>
+      <td class="jtbd-cell">When my prototype is ready, I want to <em>test, fix, promote, and certify my integration</em> with confidence, so I can ship without manually managing every step.</td>
+      <td class="jtbd-cell">When my integration is live, I want <em>real-time visibility into errors, usage, and global readiness</em>, so I can catch degradation and scale before it impacts customers.</td>
     </tr>
 
     <!-- ══ SECTION 2 ══ -->
     <tr class="section-row" onclick="toggleSection('where')">
-      <td colspan="5">
+      <td colspan="4">
         <div class="section-label">
           <span class="section-name">Where It Happens</span>
           <span class="section-q">Which surface is primary, and what can the developer do there?</span>
@@ -538,45 +536,53 @@
       <td class="row-label">Website</td>
       <td>
         <span class="pill-primary">✦ Primary</span>
-        <div class="detail visible" id="w-ideate"><span class="surface-note">Define moments, confirm agent-drafted spec, set data sensitivity flags</span></div>
+        <div class="detail" id="w-build"><span class="surface-note">Define integration spec, confirm agent-drafted scaffold, set data sensitivity flags</span></div>
       </td>
       <td>
         <span class="pill-secondary">Secondary</span>
-        <div class="detail visible" id="w-build"><span class="surface-note">Approve capability mappings, resolve routing gaps</span></div>
-      </td>
-      <td>
-        <span class="pill-secondary">Secondary</span>
-        <div class="detail visible" id="w-test"><span class="surface-note">Review test results, submit for certification, approve staged rollout</span></div>
+        <div class="detail" id="w-deploy"><span class="surface-note">Review test results, submit for certification, approve staged rollout</span></div>
       </td>
       <td>
         <span class="pill-primary">✦ Primary</span>
-        <div class="detail visible" id="w-monitor"><span class="surface-note">Usage dashboards, task completion rates, drop-off analysis</span></div>
+        <div class="detail" id="w-manage"><span class="surface-note">Usage dashboards, error monitoring, locale and version management</span></div>
       </td>
     </tr>
 
     <tr class="data-row collapsible" data-section="where">
       <td class="row-label">IDE</td>
       <td>
-        <span class="pill-secondary">Not applicable</span>
-        <div class="detail visible" id="ide-ideate"><span class="surface-note">Ideation happens on the Website surface. The IDE only becomes relevant once there is something to build — it picks up at Build &amp; Simulate and carries through to Test &amp; Deploy.</span></div>
+        <span class="pill-primary">✦ Primary</span>
+        <div class="detail" id="ide-build"><span class="surface-note">Write action definitions, inline SDK suggestions, iterate on scaffolded code</span></div>
       </td>
       <td>
         <span class="pill-primary">✦ Primary</span>
-        <div class="detail visible" id="ide-build"><span class="surface-note">Write action definitions, inline SDK suggestions, iterate on scaffolded code</span></div>
-      </td>
-      <td>
-        <span class="pill-primary">✦ Primary</span>
-        <div class="detail visible" id="ide-test"><span class="surface-note">Run test suites, debug endpoint failures, review error logs</span></div>
+        <div class="detail" id="ide-deploy"><span class="surface-note">Run test suites, debug endpoint failures, review error logs</span></div>
       </td>
       <td>
         <span class="pill-secondary">Secondary</span>
-        <div class="detail visible" id="ide-monitor"><span class="surface-note">Inspect live API response diffs, view performance alerts</span></div>
+        <div class="detail" id="ide-manage"><span class="surface-note">Inspect live API response diffs, view performance alerts</span></div>
+      </td>
+    </tr>
+
+    <tr class="data-row collapsible" data-section="where">
+      <td class="row-label">CLI</td>
+      <td>
+        <span class="pill-secondary">Secondary</span>
+        <div class="detail" id="cli-build"><span class="surface-note">Initialize project scaffold, install SDK dependencies, configure API keys</span></div>
+      </td>
+      <td>
+        <span class="pill-primary">✦ Primary</span>
+        <div class="detail" id="cli-deploy"><span class="surface-note">Run test suites locally, promote builds to target environments, trigger certification submission</span></div>
+      </td>
+      <td>
+        <span class="pill-secondary">Not applicable</span>
+        <div class="detail" id="cli-manage"><span class="surface-note">Post-launch operations are handled through the Website dashboard and automated agent pipelines rather than manual CLI commands.</span></div>
       </td>
     </tr>
 
     <!-- ══ SECTION 3 ══ -->
     <tr class="section-row" onclick="toggleSection('how')">
-      <td colspan="5">
+      <td colspan="4">
         <div class="section-label">
           <span class="section-name">How It Works</span>
           <span class="section-q">Where does collaboration end and autonomy begin?</span>
@@ -592,16 +598,7 @@
           <div class="mode-dot dot-hitl" style="background:#D03B2F"></div>
           <div>
             <div class="mode-label hitl-always" style="background:#FFFFFF;color:#00A8E1;border:1px solid #00A8E1;padding:2px 8px;border-radius:3px;">✦ Always</div>
-            <div class="detail visible" id="hitl-ideate"><div class="mode-desc">Developer confirms every moment before spec is generated; no technical scaffolding begins without explicit approval</div></div>
-          </div>
-        </div>
-      </td>
-      <td>
-        <div class="mode-block">
-          <div class="mode-dot dot-hitl" style="background:#D03B2F"></div>
-          <div>
-            <div class="mode-label hitl-always" style="background:#FFFFFF;color:#00A8E1;border:1px solid #00A8E1;padding:2px 8px;border-radius:3px;">✦ Always</div>
-            <div class="detail visible" id="hitl-build"><div class="mode-desc">Developer approves all capability mappings; resolves flagged routing gaps before advancing to simulate</div></div>
+            <div class="detail" id="hitl-build"><div class="mode-desc">Developer confirms integration spec and scaffold before agent proceeds; no build begins without explicit approval</div></div>
           </div>
         </div>
       </td>
@@ -610,7 +607,7 @@
           <div class="mode-dot dot-hitl" style="background:#D4711A"></div>
           <div>
             <div class="mode-label hitl-selective">Selective</div>
-            <div class="detail visible" id="hitl-test"><div class="mode-desc">Developer makes the final go/no-go call and approves deployment scope; agent handles test execution</div></div>
+            <div class="detail" id="hitl-deploy"><div class="mode-desc">Developer makes the final go/no-go call before promotion and certification; agent handles test execution and bug fixes</div></div>
           </div>
         </div>
       </td>
@@ -619,7 +616,7 @@
           <div class="mode-dot dot-hitl" style="background:#C49A10"></div>
           <div>
             <div class="mode-label hitl-ondemand">On demand</div>
-            <div class="detail visible" id="hitl-monitor"><div class="mode-desc">Developer sets thresholds and reviews flagged issues; routine monitoring runs without developer input</div></div>
+            <div class="detail" id="hitl-manage"><div class="mode-desc">Developer sets thresholds and reviews flagged issues; routine monitoring and rollback operations run without developer input</div></div>
           </div>
         </div>
       </td>
@@ -629,21 +626,40 @@
       <td class="row-label">Agent responsibilities</td>
       <td>
         <span class="agent-chip">Orchestrator</span>
-        <div class="detail visible" id="ag-ideate"><p class="agent-desc">Surfaces integration type and drafts moment scaffold from URL or conversation</p></div>
+        <span class="agent-chip">Sub-agent</span>
+        <div class="detail" id="ag-build"><p class="agent-desc">Orchestrator surfaces integration type and delegates to sub-agents to scaffold and generate a testable prototype</p></div>
       </td>
       <td>
-        <span class="agent-chip">Orchestrator</span>
-        <span class="agent-chip">Sub-agent</span>
-        <div class="detail visible" id="ag-build"><p class="agent-desc">Delegates to sub-agents for capability mapping and routing validation; flags gaps before developer advances</p></div>
-      </td>
-      <td>
-        <span class="agent-chip">Sub-agent</span>
         <span class="agent-chip">Judge agent</span>
-        <div class="detail visible" id="ag-test"><p class="agent-desc">Sub-agents execute test runs autonomously; judge agent evaluates results and surfaces a go/no-go recommendation</p></div>
+        <span class="agent-chip">Sub-agent</span>
+        <div class="detail" id="ag-deploy"><p class="agent-desc">Sub-agents execute test runs and apply fixes autonomously; judge agent evaluates results and surfaces a go/no-go recommendation before promotion and certification</p></div>
       </td>
       <td>
         <span class="agent-chip">Orchestrator</span>
-        <div class="detail visible" id="ag-monitor"><p class="agent-desc">Monitors continuously across all surfaces; surfaces anomalies, intent drift, and performance degradation for developer review</p></div>
+        <span class="agent-chip">Sub-agent</span>
+        <div class="detail" id="ag-manage"><p class="agent-desc">Orchestrator monitors continuously; sub-agents handle versioning, rollbacks, and locale validation without developer-initiated prompts</p></div>
+      </td>
+    </tr>
+
+    <tr class="data-row collapsible" data-section="how">
+      <td class="row-label">Specific agents</td>
+      <td>
+        <span class="agent-chip">Integration agent</span>
+        <span class="agent-chip">Prototyping agent</span>
+        <div class="detail" id="sa-build"><p class="agent-desc">Integration agent maps API schema to SDK models; Prototyping agent generates a testable prototype from the integration spec</p></div>
+      </td>
+      <td>
+        <span class="agent-chip">Testing agent</span>
+        <span class="agent-chip">Bug fixing agent</span>
+        <span class="agent-chip">Promotion agent</span>
+        <span class="agent-chip">Certification agent</span>
+        <div class="detail" id="sa-deploy"><p class="agent-desc">Testing agent runs simulated interactions; Bug fixing agent identifies and applies targeted fixes; Promotion agent pushes to target environment; Certification agent validates against compliance requirements</p></div>
+      </td>
+      <td>
+        <span class="agent-chip">Lifecycle ops agent</span>
+        <span class="agent-chip">Monitoring agent</span>
+        <span class="agent-chip">Internationalization agent</span>
+        <div class="detail" id="sa-manage"><p class="agent-desc">Lifecycle ops agent manages versioning and rollbacks; Monitoring agent surfaces real-time errors and usage patterns; Internationalization agent adapts content for new locales</p></div>
       </td>
     </tr>
 
@@ -651,19 +667,10 @@
       <td class="row-label">Agent autonomy</td>
       <td>
         <div class="mode-block">
-          <div class="mode-dot" style="background:#D03B2F;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
+          <div class="mode-dot" style="background:#D4711A;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
-            <div class="mode-label auto-none">None</div>
-            <div class="detail visible" id="auto-ideate"><div class="mode-desc">All ideation outputs require developer confirmation before proceeding</div></div>
-          </div>
-        </div>
-      </td>
-      <td>
-        <div class="mode-block">
-          <div class="mode-dot" style="background:#C49A10;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
-          <div>
-            <div class="mode-label auto-low">Low</div>
-            <div class="detail visible" id="auto-build"><div class="mode-desc">Agent scaffolds boilerplate and surfaces routing suggestions without prompting</div></div>
+            <div class="mode-label auto-moderate">Moderate</div>
+            <div class="detail" id="auto-build"><div class="mode-desc">Agent scaffolds and prototypes but all outputs require developer confirmation before proceeding</div></div>
           </div>
         </div>
       </td>
@@ -672,7 +679,7 @@
           <div class="mode-dot" style="background:#D4711A;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
             <div class="mode-label auto-moderate">Moderate</div>
-            <div class="detail visible" id="auto-test"><div class="mode-desc">Agent runs full test suites and stages builds independently; surfaces results for review</div></div>
+            <div class="detail" id="auto-deploy"><div class="mode-desc">Agent runs test suites and applies fixes independently; developer approves before promotion and certification</div></div>
           </div>
         </div>
       </td>
@@ -681,7 +688,7 @@
           <div class="mode-dot" style="background:#D03B2F;margin-top:5px;flex-shrink:0;width:7px;height:7px;border-radius:50%"></div>
           <div>
             <div class="mode-label auto-high" style="background:#FFFFFF;color:#00A8E1;border:1px solid #00A8E1;padding:2px 8px;border-radius:3px;">✦ High</div>
-            <div class="detail visible" id="auto-monitor"><div class="mode-desc">Agent monitors, logs, and surfaces insights continuously without developer-initiated prompts</div></div>
+            <div class="detail" id="auto-manage"><div class="mode-desc">Agent monitors, logs, manages rollbacks, and surfaces insights continuously without developer-initiated prompts</div></div>
           </div>
         </div>
       </td>
@@ -702,26 +709,6 @@
     headerRow.classList.toggle('collapsed', !isCollapsed);
   }
 
-  function toggleRows() {
-    const btn = document.getElementById('rowsToggle');
-    const isExpanded = btn.dataset.state === 'expanded';
-    if (isExpanded) {
-      // Collapse Where It Happens and How It Works only
-      ['where', 'how'].forEach(id => {
-        document.querySelectorAll(`[data-section="${id}"]`).forEach(r => r.classList.add('hidden'));
-        document.querySelector(`[onclick="toggleSection('${id}')"]`).classList.add('collapsed');
-      });
-      btn.textContent = 'Expand all';
-      btn.dataset.state = 'collapsed';
-    } else {
-      // Expand all sections
-      document.querySelectorAll('.collapsible').forEach(r => r.classList.remove('hidden'));
-      document.querySelectorAll('.section-row').forEach(r => r.classList.remove('collapsed'));
-      btn.textContent = 'Collapse all';
-      btn.dataset.state = 'expanded';
-    }
-  }
-
   function toggleDetails() {
     const btn = document.getElementById('detailsToggle');
     const isVisible = btn.dataset.state === 'visible';
@@ -729,6 +716,15 @@
     btn.textContent = isVisible ? 'Show details' : 'Hide details';
     btn.dataset.state = isVisible ? 'hidden' : 'visible';
   }
+
+  // On load: all rows expanded, details hidden
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.collapsible').forEach(r => r.classList.remove('hidden'));
+    document.querySelectorAll('.section-row').forEach(r => r.classList.remove('collapsed'));
+    document.querySelectorAll('.detail').forEach(r => r.classList.remove('visible'));
+    document.getElementById('detailsToggle').textContent = 'Show details';
+    document.getElementById('detailsToggle').dataset.state = 'hidden';
+  });
 </script>
 
 </body>
